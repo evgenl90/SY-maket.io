@@ -1,0 +1,814 @@
+
+@font-face {
+   font-family: 'Arial Italic';
+   src: url(fonts/arial_italic.ttf);
+}
+@font-face {
+   font-family: 'OfficinaSerifC Bold';
+   src: url(fonts/OfficinaSerifCBold.otf);
+}
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Roboto:300,400,700&display=swap');
+
+
+$fon_grey: #f7f7f7;
+$font_darkGrey: #343434;
+$top: 25px;
+$greenPrice: #3f7a50;
+////////////////////////////////
+$titleH1: #503314;
+$fontContent: #343434;
+$titleContent: #1c1c1c;
+
+@mixin fontHeader($size){
+  font-family: 'OfficinaSerifC Bold';
+  font-size: $size;
+}
+@mixin fontLight($size){
+  font-family: 'Roboto Light';
+  font-size: $size;
+}
+@mixin fontReg($size){
+  font-family: 'Roboto Regular';
+  font-size: $size;
+}
+@mixin fontBold($size){
+  font-family: 'Roboto Bold';
+  font-size: $size;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+  }
+}
+.wrapper {
+  max-width: 1920px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+//////////////////////////////////////////////////////////////
+
+.navHead{
+  display: none;
+  background: url(../images/fon.jpg) repeat-y;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  @include fontHeader(12px);
+  img:nth-of-type(1){
+    margin-bottom: 360px;
+  }
+  p{
+    margin-top: 15px;
+  }
+}
+header{
+  background: url(../images/fon.jpg) repeat-y;
+  color: #fff;
+  position: relative;
+  .logo{
+    text-align: center;
+    margin: $top 50px 100px;
+    p{
+      margin-top: 20px;
+    }
+    a{
+      margin-left: 0;
+    }
+    span{
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      padding: 10px;
+      &:hover{
+        background:$greenPrice;
+      }
+    }
+    img:not(:first-child){
+      margin-bottom: 30px;
+    }
+    p{
+      @include fontHeader(15px);
+      line-height: 1.5;
+    }
+  }
+  a{
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    color: #fff;
+  }
+  nav{
+    display: grid;
+    text-align: left;
+    a{
+      margin-bottom: 40px;
+    }
+  }
+  a, .tel{
+    margin-left: 60px;
+    @include fontHeader(16px);
+  }
+  .tel{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    h6{
+      @include fontHeader(20px);
+      margin-bottom: 10px;
+    }
+    p{
+      font-family: 'Roboto Regular';
+      font-size: 12px;
+    }
+  }
+}
+/////////////////////////////////////////////////////////////////
+
+.options {
+  float: left;
+  height: 100%;
+  margin-right: 30px;
+}
+.carousel-nav .flickity-viewport {
+  overflow: inherit;
+}
+.delivery{
+  //margin-left: 440px;
+}
+////////////////////////////////////////////////////
+.options {
+  color: $font_darkGrey;
+  padding: $top 45px 0;
+  background: $fon_grey;
+  @include fontLight(18px);
+  .vk{
+    display: flex;
+    .del{
+      height: 35px;
+      background: #e8e8e8;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      img{
+        position: absolute;
+        left: -6px;
+        top: -21px;
+      }
+      p{
+        margin:0 15px;
+      }
+    }
+  }
+  .vk img, .vk >.del{
+    margin: 35px 15px 45px 0;
+  }
+  .param{
+    display: flex;
+    margin-bottom: 20px;
+    p{
+      margin-left: 30px;
+    }
+    .paramS{
+      font-family: 'Roboto Bold';
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+  }
+  >p >span {
+    color: $greenPrice;
+    font-weight: bold;
+    @include fontHeader(30px);
+    margin-top: 30px;
+  }
+  button{
+    background: url(../images/buttonBg.png)no-repeat top left;
+    padding: 20px 50px;
+    border: none;
+    @include fontHeader(20px);
+    color: #fff;
+    margin: 40px 0 60px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px rgba(237,237,237,1);
+  }
+  >p:last-child{
+    font-size: 16px;
+  }
+}
+////////////////////////////////////////////////////////
+.carousel-main{
+  width: 773px;
+  height: 505px;
+  position: relative;
+  #comImg{
+    position: absolute;
+    top: 0px;
+    left: 0px !important;
+    cursor: pointer;
+    &:hover{
+      opacity: .5;
+    }
+  }
+  .flickity-prev-next-button{
+    display: none;
+  }
+}
+.carousel-nav{
+  text-align: center;
+}
+.carousel {
+  margin-bottom: 40px;
+}
+.carousel-cell {
+  margin-right: 20px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+
+  border-bottom: 3px solid black;
+}
+
+.flickity-button{
+  background: none !important;
+}
+.flickity-slider{
+  display: flex;
+  align-items: center;
+  height: 100% !important;
+}
+
+.flickity-page-dots {
+  display: none;
+}
+.flickity-prev-next-button.next{
+  right: 0px !important;
+  padding: 0;
+}
+.flickity-prev-next-button.previous {
+    left: 0px !important;
+    padding: 0;
+}
+
+//////////////////////////////////////////////////////////////
+
+.content{
+  padding: 25px 119px 25px 30px;
+  color: $fontContent;
+  @include fontLight(16px);
+  h1{
+    margin: 40px 0;
+    color: $titleH1;
+    @include fontHeader(60px);
+  }
+  h2{
+      @include fontHeader(30px);
+      color: $titleContent;
+  }
+  a{
+    text-decoration: none;
+      color: $titleContent;
+      margin-right: 25px;
+      &:hover{
+        opacity: .5;
+      }
+  }
+  .slider{
+    display: flex;
+    justify-content: space-between;
+    #plan{
+      margin-left: 50px;
+      img{
+        margin-left: 15px;
+      }
+      img:not(:last-child){
+        margin-bottom: 40px;
+      }
+      p{
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.con2{
+  display: grid !important;
+}
+
+.compare{
+  display: flex;
+  >div{
+    width: 50%;
+    h5{
+      @include fontHeader(22px);
+      color: $titleContent;
+    }
+  }
+  >div>div:not(:last-child){
+    background-color: #f2f2f2;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    img{
+      margin-left: 30px;
+    }
+    h5{
+      margin-left: 35px;
+    }
+  }
+  >div:not(:last-child){
+    margin-right: 30px;
+  }
+  >div>p{
+    padding:15px 0 15px 30px;
+    &:nth-child(2n-1){
+      background: #f7f7f7;
+    }
+  }
+  .basePrice{
+    background: url(../images/basePrice.jpg);
+  }
+  .optimaPrice{
+    background: url(../images/optimaPrice.png);
+  }
+  .basePrice, .optimaPrice{
+    @include fontHeader(30px);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 40px 0 !important;
+  }
+}
+//////////////////////////////////////////////////////////////////
+.delivery{
+  padding: 45px 0 55px 0;
+  background: #f6f6f6;
+  text-align: center;
+  margin-top: 45px;
+  h2{
+    margin-bottom: 25px;
+  }
+  p{
+    font-size: 18px;
+    span{
+      @include fontBold(18px);
+      font-weight: bold;
+    }
+  }
+  >div{
+    margin: 35px 0 45px;
+    img:not(:last-child){
+      margin-right: 40px;
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////////////
+
+.description{
+  padding: 50px 0 65px;
+  text-align: center;
+  p{
+    margin: 30px 0 50px;
+    text-align: left;
+  }
+  a{
+    position: absolute;
+    top: 50%;
+    left: 44%;
+  }
+  #description{
+    position: relative;
+  }
+
+}
+///////////////////////////////////////////////////////////////////////////////
+.built{
+  h2{
+    text-align: center;
+  }
+}
+.video{
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 60px;
+
+  div{
+    margin-right: 36px;
+    p{
+      margin: 25px 0 15px;
+    }
+    >div img:nth-of-type(1){
+      box-shadow: 3px 3px 3px 0px rgba(224,224,224,1);
+      border: 1px solid #e0e0e0;
+    }
+  }
+  .play{
+    position: relative;
+    margin: 0;
+    p{
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      margin: 0;
+      color:#fff;
+    }
+  }
+  a{
+    position: absolute;
+    top: 45%;
+    right: 38%;
+  }
+  >div>div {
+    display: flex;
+    vertical-align: top;
+    img{
+      height: 100%;
+      margin-right: 10px;
+    }
+  }
+}
+.foto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  img{
+    margin-bottom: 30px;
+  }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+footer{
+  margin:90px -80px 0 0;
+  color: #494949;
+  .foot1, .foot2, .foot3, .foot4{
+    @include fontLight(15px);
+    h5{
+      @include fontBold(15px);
+    }
+    span{
+      color: #006022;
+    }
+  }
+  >div{
+    display: flex;
+    justify-content: space-between;
+  }
+  >div:not(:last-child){
+    margin-bottom: 60px;
+  }
+  .foot1 p, .foot2 >p{
+    margin-top: 20px;
+  }
+  .gps, .tel{
+    display: flex;
+    >img{
+      height: 100%;
+      margin-right: 20px;
+    }
+  }
+  .gps{
+    p{
+      line-height: 1.8;
+    }
+    p:nth-of-type(1){
+      margin-bottom: 30px;
+    }
+    h5{
+      margin-bottom: 10px;
+    }
+  }
+  .tel{
+    p{
+      margin: 20px 0 45px;
+      line-height: 2;
+    }
+    a:not(:last-child){
+      margin-right: 30px;
+    }
+  }
+  #foot {
+    font-size: 12px;
+    p{
+      font-family: 'PT Sans Regular', sans-serif;
+    }
+    a{
+      font-family: 'Arial Italic', sans-serif;
+      text-decoration: underline;
+      font-style: italic;
+    }
+  }
+}
+
+////////////////////// Mobile //////////////////////////////
+@media screen and (max-width: 1366px){
+  .wrapper{
+    zoom: 72% ;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .wrapper{
+    zoom: 100%;
+    .content{
+      padding-right: 30px;
+      h1{
+        font-size: 53px;
+      }
+    }
+  }
+
+  .flickity-prev-next-button.next, .flickity-prev-next-button.previous, .foto, footer, .video>div:nth-of-type(1) {
+    display: none!important;
+  }
+  .flickity-slider{
+    transform: none !important;
+  }
+  .slider{
+    position: relative;
+    display: block !important;
+    #plan{
+      display: flex;
+      margin-left: 0 !important;
+      >div:not(:last-child){
+        margin-right: 80px;
+      }
+    }
+  }
+
+  .carousel-nav .flickity-viewport .flickity-slider .carousel-cell img{
+    width: 130px;
+  }
+
+  #plan img{
+    width: 240px;
+  }
+  .options{
+    float: right;
+    height: auto;
+    margin-top: 165px;
+    padding-left: 50px;
+    width: 25%;
+  }
+  .delivery{
+    margin-left: 0;
+  }
+  .options{
+    background: none;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .description{
+    a{
+      left: 45%;
+    }
+  }
+  .video{
+    justify-content: flex-start !important;
+    div{
+      margin-right: 80px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px){
+
+  .navHead{
+    display: block;
+  }
+  .logo span{
+    display: block !important;
+  }
+  header{
+    display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1000;
+    padding-bottom: 80px;
+    .logo>p{
+      display: none;
+    }
+  }
+  .description{
+    a{
+      left: 44%;
+    }
+  }
+}
+
+@media screen and (max-width: 320px){
+  .wrapper{
+    display: block;
+    zoom: 100%;
+    header{
+      width: 100%;
+      background: url(../images/fon320.jpg)no-repeat;
+      background-size: cover;
+      padding-bottom: 10px;
+      .tel, >a{
+        display: none;
+      }
+      .logo {
+        text-align: left;
+        margin: 5px 30px 20px 5px;
+        >a img{
+          width: 70px;
+        }
+        span{
+          top: 26px;
+          right: 27px;
+        }
+      }
+      nav{
+        text-align: center;
+        a{
+          margin: 0 0 35px;
+        }
+      }
+    }
+  }
+  .navHead{
+    background: url(../images/fon320.jpg)no-repeat;
+    padding: 5px 30px 5px 5px;
+    img:nth-of-type(1){
+      margin-bottom: 0;
+    }
+    p{
+      display: none;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      height: 100%;
+    }
+  }
+
+  .opcon{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .options{
+    width: 100%;
+    order: 3;
+    padding: 0 10px;
+    margin: 40px 0 35px;
+    .vk img, .vk >.del{
+      margin: 20px 15px 50px 0;
+    }
+    .del img{
+      top:-6px !important;
+    }
+    button{
+      margin-bottom: 40px;
+    }
+  }
+  .con2{
+    order:5;
+  }
+
+  body .wrapper .content .krosh {
+     display: none !important;
+  }
+  .compare{
+     display: block !important;
+     >div{
+       width: 100%;
+     }
+     img{
+       display: none;
+     }
+     h5 {
+       margin-left: 20px !important;
+     }
+     >div>p{
+        padding-left: 20px;
+     }
+     >div:not(:last-child){
+     margin-bottom: 40px !important;
+    }
+  }
+  .content{
+    overflow: hidden;
+    padding: 0 !important;
+    h1{
+      margin: 30px 20px;
+      font-size: 30px;
+    }
+    .carousel-main .flickity-viewport .flickity-slider .carousel-cell img{
+        width: 320px;
+        height: 214px;
+    }
+    .carousel-main{
+      height: 214px;
+    }
+    .carousel-nav .flickity-viewport .flickity-slider .carousel-cell img{
+        width: 75px;
+        height: 55px;
+    }
+    .carousel-nav .flickity-viewport .flickity-slider{
+        width: 85%;
+        margin: 0 5px;
+
+    }
+    .carousel{
+      margin-bottom: 15px;
+    }
+    #plan {
+      margin-left: 10px !important;
+      img{
+        width: 130px;
+        margin-left: 0 !important;
+      }
+      >div:not(:last-child){
+        margin-right: 30px;
+
+      }
+    }
+  }
+  h2{
+    font-size: 24px  !important;
+  }
+  .delivery{
+    padding: 20px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    p{
+      font-size: 14px;
+    }
+    p:not(:last-child){
+      margin-bottom: 30px;
+    }
+    >div{
+      order: 3;
+      img{
+        margin-right: 15px  !important;
+        width: 75px;
+      }
+      img:last-child{
+        display: none;
+      }
+    }
+  }
+  .description{
+    padding: 30px 0;
+    h2{
+      margin-left: 20px;
+      text-align: left;
+    }
+    img:not(:last-child){
+      width: 320px;
+    }
+    a{
+      left: 40%;
+      img{
+      width: 20px;
+      }
+    }
+    p{
+      margin: 30px 20px 50px;
+    }
+  }
+  .built{
+    padding: 0 10px;
+    h2{
+      text-align: left;
+      margin-left: 10px;
+    }
+    .video{
+      margin: 30px 0 40px;
+      flex-wrap: wrap;
+      .play{
+        order: 1;
+        >img{
+          width: 300px;
+          margin-bottom: 45px;
+        }
+        a img{
+            width: 35px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+      >div{
+        order: 2;
+      }
+    }
+  }
+}
